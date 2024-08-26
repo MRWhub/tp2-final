@@ -26,26 +26,26 @@ Concurrency with Threads:
 
 Mutex for Synchronization:
 
-Used to ensure safe access to shared resources (e.g., patient queue, file writing) across multiple threads.
+- Used to ensure safe access to shared resources (e.g., patient queue, file writing) across multiple threads.
 
 Priority Queue for Exam Handling:
 
-Exams are prioritized based on patient condition, ensuring that critical cases are handled first.
+- Exams are prioritized based on patient condition, ensuring that critical cases are handled first.
 
 File Operations:
 
-Patient, exam, and report data are written to separate files for post-simulation analysis.
+- Patient, exam, and report data are written to separate files for post-simulation analysis.
 
 Dynamic Memory Management:
 
-Structures like ReportThreadArgs and ReportThreadArgs2 are dynamically allocated to manage thread arguments efficiently.
+- Structures like ReportThreadArgs, ReportThreadArgs2, priorit queues and queues are dynamically allocated to manage thread arguments efficiently.
 
 
 # Key Considerations
 
-Real-Time Simulation: The program uses random delays (my_sleep) to simulate real-time events like patient arrivals and report generation.
-Error Handling: Basic error handling is implemented, such as checking for NULL pointers and file I/O errors.
-Comments: For more details about any function and TADS, verify on the source code comments.
+- Real-Time Simulation: The program uses random delays (my_sleep) to simulate real-time events like patient arrivals and report generation.
+- Error Handling: Basic error handling is implemented, such as checking for NULL pointers and file I/O errors.
+- Comments: For more details about any function and TADS, verify on the source code comments.
 
  #Conclusion
-This simulation demonstrates the use of threads, synchronization, queues and priority queues to manage a hospital's X-ray examination process. The approach focuses on concurrency and real-time event handling, making it a practical model for similar real-world applications.
+- This simulation demonstrates the use of threads, synchronization, queues and priority queues to manage a hospital's X-ray examination process. The approach focuses on concurrency and real-time event handling, making it a practical model for similar real-world applications.
