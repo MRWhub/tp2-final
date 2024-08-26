@@ -1,28 +1,28 @@
-#X-Ray Examination Simulator
+# X-Ray Examination Simulator
 
-#Overview
+# Overview
 This project simulates a hospital scenario where patients undergo X-ray examinations managed by AI. After the examination, patients are placed in a priority queue and eventually pass through a doctor's report. The simulation involves multiple threads handling patient arrivals, exam processing, and medical report generation, focusing on implementing TADs (Abstract Data Types), concurrency, synchronization, and real-time processing.
 
-#MakeFile
+# MakeFile
 1° Clone the Repository: Download the repository and unzip it.
 
 2° Compile the Program: Navigate to the project directory in the terminal, and execute:
     --> On linux : make
     --> On windows: migw32-make
 
-#Principal TADs (Types Abstract Data)
----> Queue TAD: A void queue with void nodes that handle data from patients and from exams.
----> Patient TAD: Has patient Struct(ID, NAME, ARRIVAL TIME) and it's functions and procedures to deal with it's data  and prints patient to .txt file.
----> Exam TAD:  Has exam Struct(ID, PATIENT ID, CONDITION(by AI) , EXAM TIME) and it's functions and procedures to deal with it's data  and prints exam to .txt file.
----> RX Machines TAD: Has Machines List of structs of machine type(ID, BOOLEAN AVAIBLE, PATIENT ID), it's functions and procedures. In this TAD, the "AI" Exam is done on function verify_and_ocupate(), using do_exam_with_AI() and diagnostic_by_ai() functions.
----> Medical Check TAD: Has report Struct(ID,EXAM_ID,CONDITION(by Doctor), REPORT TIME) and ExamPriorityQueue Struct( SIX QUEUE, one per priority) and they functions and procedures. In this TAD are the procedure that prints the simulation status and prints report to .txt file.
----> Time Control File:  Has functions and procedures to control time during program execution. In this TAD, the function pre_random_time() returns a random double number between (2 and 3].
+# Principal TADs (Types Abstract Data)
+- Queue TAD: A void queue with void nodes that handle data from patients and from exams.
+- Patient TAD: Has patient Struct(ID, NAME, ARRIVAL TIME) and it's functions and procedures to deal with it's data  and prints patient to .txt file.
+- Exam TAD:  Has exam Struct(ID, PATIENT ID, CONDITION(by AI) , EXAM TIME) and it's functions and procedures to deal with it's data  and prints exam to .txt file.
+- RX Machines TAD: Has Machines List of structs of machine type(ID, BOOLEAN AVAIBLE, PATIENT ID), it's functions and procedures. In this TAD, the "AI" Exam is done on function verify_and_ocupate(), using do_exam_with_AI() and diagnostic_by_ai() functions.
+- Medical Check TAD: Has report Struct(ID,EXAM_ID,CONDITION(by Doctor), REPORT TIME) and ExamPriorityQueue Struct( SIX QUEUE, one per priority) and they functions and procedures. In this TAD are the procedure that prints the simulation status and prints report to .txt file.
+-  Time Control File:  Has functions and procedures to control time during program execution. In this TAD, the function pre_random_time() returns a random double number between (2 and 3].
 
-#Main Implementation Decisions
+# Main Implementation Decisions
 Concurrency with Threads:
 
-->Arrival of Patients: A dedicated thread handles patient arrivals, simulating real-time patient flow.
-->Report Generation: Another thread manages the generation of medical reports after exams are completed.
+- Arrival of Patients: A dedicated thread handles patient arrivals, simulating real-time patient flow.
+- Report Generation: Another thread manages the generation of medical reports after exams are completed.
 
 Mutex for Synchronization:
 
@@ -41,7 +41,7 @@ Dynamic Memory Management:
 Structures like ReportThreadArgs and ReportThreadArgs2 are dynamically allocated to manage thread arguments efficiently.
 
 
-#Key Considerations
+# Key Considerations
 
 Real-Time Simulation: The program uses random delays (my_sleep) to simulate real-time events like patient arrivals and report generation.
 Error Handling: Basic error handling is implemented, such as checking for NULL pointers and file I/O errors.
