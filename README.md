@@ -47,5 +47,5 @@ Dynamic Memory Management:
 - Error Handling: Basic error handling is implemented, such as checking for NULL pointers and file I/O errors.
 - Comments: For more details about any function and TADS, verify on the source code comments.
 
- #Conclusion
+ # Conclusion
 - This simulation demonstrates the use of threads, synchronization, queues and priority queues to manage a hospital's X-ray examination process. The approach focuses on concurrency and real-time event handling, making it a practical model for similar real-world applications.
